@@ -68,8 +68,8 @@ def generate_metadata(
     vod_package.check_files()
 
     # Package section
-    package_asset_name = "{} {} (package)".format(short_name, suffix)
-    package_description = "{} {} (package asset)".format(short_name, suffix)
+    package_asset_name = "{}".format(short_name)
+    package_description = "{}".format(short_name)
     package_asset_id = "{}P{}{}".format(vod_config.prefix, asset_id, suffix)
 
     vod_package.D_ams["package"].update(
@@ -91,11 +91,11 @@ def generate_metadata(
     )
 
     # Title section
-    title_asset_name = "{} {} (title)".format(short_name, suffix)
-    title_description = "{} {} (title asset)".format(short_name, suffix)
+    title_asset_name = "{}".format(short_name)
+    title_description = "{}".format(short_name)
     title_asset_id = "{}T{}{}".format(vod_config.prefix, asset_id, suffix)
-    title_title_brief = "{} {}".format(file_name[:14], suffix)
-    title_title = "{} {}".format(file_name[:124], suffix)
+    title_title_brief = "{}".format(file_name[:14])
+    title_title = "{}".format(file_name[:124])
 
     vod_package.D_ams["title"].update(
         {
@@ -132,8 +132,8 @@ def generate_metadata(
     )
 
     # Movie section
-    movie_asset_name = "{} {} (movie)".format(short_name, suffix)
-    movie_description = "{} {} (movie asset)".format(short_name, suffix)
+    movie_asset_name = "{}".format(short_name)
+    movie_description = "{}".format(short_name)
     movie_asset_id = "{}M{}{}".format(vod_config.prefix, asset_id, suffix)
 
     vod_package.D_ams["movie"].update(
@@ -154,10 +154,8 @@ def generate_metadata(
 
     # Preview section
     if has_preview:
-        preview_asset_name = "{} {} (preview)".format(short_name, suffix)
-        preview_description = "{} {} (preview asset)".format(
-            short_name, suffix
-        )
+        preview_asset_name = "{}".format(short_name)
+        preview_description = "{}".format(short_name)
         preview_asset_id = "{}R{}{}".format(
             vod_config.prefix, asset_id, suffix
         )
@@ -180,8 +178,8 @@ def generate_metadata(
         )
 
     if has_poster:
-        poster_asset_name = "{} {} (poster)".format(short_name, suffix)
-        poster_description = "{} {} (poster asset)".format(short_name, suffix)
+        poster_asset_name = "{}".format(short_name)
+        poster_description = "{}".format(short_name)
         poster_asset_id = "{}I{}{}".format(vod_config.prefix, asset_id, suffix)
         vod_package.D_ams["poster"].update(
             {
@@ -200,10 +198,8 @@ def generate_metadata(
         vod_package.D_app["poster"].update({"Type": "poster"})
 
     if has_box_cover:
-        box_cover_asset_name = "{} {} (box_cover)".format(short_name, suffix)
-        box_cover_description = "{} {} (box_cover asset)".format(
-            short_name, suffix
-        )
+        box_cover_asset_name = "{}".format(short_name)
+        box_cover_description = "{}".format(short_name)
         box_cover_asset_id = "{}B{}{}".format(
             vod_config.prefix, asset_id, suffix
         )

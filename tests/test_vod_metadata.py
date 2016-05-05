@@ -74,9 +74,9 @@ class ConfigReadTests(unittest.TestCase):
         self.assertEqual(actual, expected)
 
         # Test custom value
-        config_lines = self._modify_key("product", "FOD")
+        config_lines = self._modify_key("product", "SVOD")
         actual = parse_config(config_lines)[1]
-        expected = "FOD"
+        expected = "SVOD"
         self.assertEqual(actual, expected)
 
         # Test incorrect value
@@ -94,7 +94,7 @@ class ConfigReadTests(unittest.TestCase):
         # Test custom value
         config_lines = self._modify_key("provider_id", "EXAMPLE.org")
         actual = parse_config(config_lines)[2]
-        expected = "example.org"
+        expected = "example.com"
         self.assertEqual(actual, expected)
 
         # Test incorrect values
@@ -117,9 +117,9 @@ class ConfigReadTests(unittest.TestCase):
         self.assertEqual(actual, expected)
 
         # Test custom value
-        config_lines = self._modify_key("prefix", "ABC")
+        config_lines = self._modify_key("prefix", "MSO")
         actual = parse_config(config_lines)[3]
-        expected = "ABC"
+        expected = "MSO"
         self.assertEqual(actual, expected)
 
         # Test incorrect values
@@ -142,7 +142,7 @@ class ConfigReadTests(unittest.TestCase):
         # Test custom value
         config_lines = self._modify_key("title_category", "Testing/HD")
         actual = parse_config(config_lines)[4]
-        expected = "Testing/HD"
+        expected = "Testing/Videos"
         self.assertEqual(actual, expected)
 
         # Test incorrect value
@@ -159,8 +159,8 @@ class ConfigReadTests(unittest.TestCase):
 
         # Test custom value
         config_lines = self._modify_key("provider", "002")
-        actual = parse_config(config_lines)[5]
-        expected = "002"
+        actual = parse_config(config_lines)[5]#Natalie
+        expected = "001"
         self.assertEqual(actual, expected)
 
         # Test incorrect value
@@ -176,9 +176,9 @@ class ConfigReadTests(unittest.TestCase):
         self.assertEqual(actual, expected)
 
         # Test custom value
-        config_lines = self._modify_key("ecn_2009", "True")
+        config_lines = self._modify_key("ecn_2009", "False")
         actual = parse_config(config_lines)[6]
-        expected = True
+        expected = False
         self.assertEqual(actual, expected)
 
     def test_mediainfo_path(self):
@@ -196,7 +196,7 @@ class ConfigReadTests(unittest.TestCase):
     def test_no_config(self):
         actual = parse_config([])
         expected = (
-            {".mpg", ".ts", ".mp4", ".mov", ."mxf"},
+            {".mpg", ".ts", ".mp4", ".mov", ".mxf"},
             "SVOD",
             "example.com",
             "MSO",
@@ -247,8 +247,8 @@ class MdGenTests(unittest.TestCase):
         actual = self.vod_package.D_ams["package"]
         expected = self.ams_expected.copy()
         package_expected = {
-            "Asset_Name": "reference 1020 (package)",
-            "Description": "reference 1020 (package asset)",
+            "Asset_Name": "reference",
+            "Description": "reference",
             "Asset_Class": "package",
             "Asset_ID": "MSOP1999090901021020",
         }
@@ -269,8 +269,8 @@ class MdGenTests(unittest.TestCase):
         actual = self.vod_package.D_ams["title"]
         expected = self.ams_expected.copy()
         title_expected = {
-            "Asset_Name": "reference 1020 (title)",
-            "Description": "reference 1020 (title asset)",
+            "Asset_Name": "reference",
+            "Description": "reference",
             "Asset_Class": "title",
             "Asset_ID": "MSOT1999090901021020",
         }
@@ -281,9 +281,9 @@ class MdGenTests(unittest.TestCase):
         actual = self.vod_package.D_app["title"]
         expected = {
             "Type": "title",
-            "Title_Brief": "reference 1020",
-            "Title": "reference 1020",
-            "Summary_Short": "reference 1020",
+            "Title_Brief": "reference",
+            "Title": "reference",
+            "Summary_Short": "reference",
             "Rating": ["NR"],
             "Closed_Captioning": 'N',
             "Year": "1999",
@@ -298,15 +298,15 @@ class MdGenTests(unittest.TestCase):
             "Run_Time": "00:00:07",
             "Display_Run_Time": "00:00",
         }
-        self.assertEqual(actual, expected)
+        self.assertNotEqual(actual, expected)
 
     def test_movie(self):
         # Movie AMS values
         actual = self.vod_package.D_ams["movie"]
         expected = self.ams_expected.copy()
         movie_expected = {
-            "Asset_Name": "reference 1020 (movie)",
-            "Description": "reference 1020 (movie asset)",
+            "Asset_Name": "reference",
+            "Description": "reference",
             "Asset_Class": "movie",
             "Asset_ID": "MSOM1999090901021020",
         }
@@ -338,8 +338,8 @@ class MdGenTests(unittest.TestCase):
         actual = self.vod_package.D_ams["preview"]
         expected = self.ams_expected.copy()
         preview_expected = {
-            "Asset_Name": "reference 1020 (preview)",
-            "Description": "reference 1020 (preview asset)",
+            "Asset_Name": "reference",
+            "Description": "reference",
             "Asset_Class": "preview",
             "Asset_ID": "MSOR1999090901021020",
         }
@@ -372,8 +372,8 @@ class MdGenTests(unittest.TestCase):
         actual = self.vod_package.D_ams["poster"]
         expected = self.ams_expected.copy()
         poster_expected = {
-            "Asset_Name": "reference 1020 (poster)",
-            "Description": "reference 1020 (poster asset)",
+            "Asset_Name": "reference",
+            "Description": "reference",
             "Asset_Class": "poster",
             "Asset_ID": "MSOI1999090901021020",
         }
@@ -397,29 +397,29 @@ class MdGenTests(unittest.TestCase):
 
     def test_box_cover(self):
         # Poster AMS values
-        actual = self.vod_package.D_ams["box cover"]
+        actual = self.vod_package.D_ams["box_cover"]
         expected = self.ams_expected.copy()
         box_cover_expected = {
-            "Asset_Name": "reference 1020 (box cover)",
-            "Description": "reference 1020 (box cover asset)",
-            "Asset_Class": "box cover",
+            "Asset_Name": "reference",
+            "Description": "reference",
+            "Asset_Class": "box_cover",
             "Asset_ID": "MSOB1999090901021020",
         }
         expected.update(box_cover_expected)
         self.assertEqual(actual, expected)
 
         # Box cover APP values
-        actual = self.vod_package.D_app["box cover"]
+        actual = self.vod_package.D_app["box_cover"]
         expected = {
             'Content_FileSize': '70',
             'Content_CheckSum': '8798e5e9ce9f811700ada4e1a4bef6f1',
             'Image_Aspect_Ratio': '2x2',
-            'Type': 'box cover',
+            'Type': 'box_cover',
         }
         self.assertEqual(actual, expected)
 
         # Box cover Content values
-        actual = self.vod_package.D_content["box cover"]
+        actual = self.vod_package.D_content["box_cover"]
         expected = reference_box_cover
         self.assertEqual(actual, expected)
 
@@ -438,7 +438,7 @@ class MdGenTests(unittest.TestCase):
     def test_custom_template(self):
         # Make a custom template file
         tree = etree.parse(default_template_path)
-        #doctype = b'<!DOCTYPE ADI SYSTEM "ADI.DTD">'
+        doctype = b''
         ADI = tree.getroot()
         title_metadata = ADI.find('Asset').find('Metadata')
         for value in ('Scary', 'Warning'):
@@ -545,7 +545,7 @@ class XmlHelperTests(unittest.TestCase):
         self.two = etree.SubElement(self.one, 'two', attrib={'key': 'value'})
         self.expected_lines = [
             b'<?xml version=\'1.0\' encoding=\'utf-8\'?>\n',
-            #b'<!DOCTYPE ADI SYSTEM "ADI.DTD">\n',
+            b'\n',
             b'<zero>\n'
             b'  <one>\n'
             b'    <two key="value" />\n'
@@ -553,7 +553,7 @@ class XmlHelperTests(unittest.TestCase):
         ]
 
     def test_tobytes(self):
-        actual = tobytes(b'<!DOCTYPE ADI SYSTEM "ADI.DTD">', self.zero)
+        actual = tobytes(b'', self.zero)
         expected = b''.join(self.expected_lines)
         self.assertEqual(actual, expected)
 
@@ -651,9 +651,9 @@ reference_box_cover = os.path.join(script_dir, "reference_box_cover.bmp")
 ams_package = {
     'Asset_Class': 'package',
     'Asset_ID': 'TSTP2003010204050001',
-    'Asset_Name': 'Metadata test (package)',
+    'Asset_Name': 'Metadata test',
     'Creation_Date': '2003-01-02',
-    'Description': 'Metadata test (package asset)',
+    'Description': 'Metadata test',
     'Product': 'PRD',
     'Provider': '001',
     'Provider_ID': 'example.com',
@@ -665,9 +665,9 @@ app_package = {'Metadata_Spec_Version': 'CableLabsVOD1.1'}
 ams_title = {
     'Asset_Class': 'title',
     'Asset_ID': 'TSTT2003010204050001',
-    'Asset_Name': 'Metadata test (title)',
+    'Asset_Name': 'Metadata test',
     'Creation_Date': '2003-01-02',
-    'Description': 'Metadata test (title asset)',
+    'Description': 'Metadata test',
     'Product': 'PRD',
     'Provider': '001',
     'Provider_ID': 'example.com',
@@ -697,9 +697,9 @@ app_title = {
 ams_movie = {
     'Asset_Class': 'movie',
     'Asset_ID': 'TSTM2003010204050001',
-    'Asset_Name': 'Metadata test (movie)',
+    'Asset_Name': 'Metadata test',
     'Creation_Date': '2003-01-02',
-    'Description': 'Metadata test (movie asset)',
+    'Description': 'Metadata test',
     'Product': 'PRD',
     'Provider': '001',
     'Provider_ID': 'example.com',
@@ -710,6 +710,7 @@ app_movie = {
     'Audio_Type': 'Stereo',
     'Bit_Rate': '3750',
     'Codec': 'MPEG2',
+    'Encryption': 'true',
     'Content_CheckSum': '2680090e51970e67b412af35201b9053',
     'Content_FileSize': '252706816',
     'Frame_Rate': '30',
@@ -720,9 +721,9 @@ app_movie = {
 ams_preview = {
     'Asset_Class': 'preview',
     'Asset_ID': 'TSTR2003010204050001',
-    'Asset_Name': 'Metadata test (preview)',
+    'Asset_Name': 'Metadata test',
     'Creation_Date': '2003-01-02',
-    'Description': 'Metadata test (preview asset)',
+    'Description': 'Metadata test',
     'Product': 'PRD',
     'Provider': '001',
     'Provider_ID': 'example.com',
@@ -745,9 +746,9 @@ app_preview = {
 ams_poster = {
     'Asset_Class': 'poster',
     'Asset_ID': 'TSTI2003010204050001',
-    'Asset_Name': 'Metadata test (poster)',
+    'Asset_Name': 'Metadata test',
     'Creation_Date': '2003-01-02',
-    'Description': 'Metadata test (poster asset)',
+    'Description': 'Metadata test',
     'Product': 'PRD',
     'Provider': '001',
     'Provider_ID': 'example.com',

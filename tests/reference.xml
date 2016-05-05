@@ -3,10 +3,10 @@
   <Metadata>
     <AMS Provider="001"
          Product="PRD"
-         Asset_Name="Metadata test (package)"
+         Asset_Name="Metadata test"
          Version_Major="1"
          Version_Minor="0"
-         Description="Metadata test (package asset)"
+         Description="Metadata test"
          Creation_Date="2003-01-02"
          Provider_ID="example.com"
          Asset_ID="TSTP2003010204050001"
@@ -17,10 +17,10 @@
     <Metadata>
       <AMS Provider="001"
            Product="PRD"
-           Asset_Name="Metadata test (title)"
+           Asset_Name="Metadata test"
            Version_Major="1"
            Version_Minor="0"
-           Description="Metadata test (title asset)"
+           Description="Metadata test"
            Creation_Date="2003-01-02"
            Provider_ID="example.com"
            Asset_ID="TSTT2003010204050001"
@@ -48,10 +48,10 @@
       <Metadata>
         <AMS Provider="001"
              Product="PRD"
-             Asset_Name="Metadata test (movie)"
+             Asset_Name="Metadata test"
              Version_Major="1"
              Version_Minor="0"
-             Description="Metadata test (movie asset)"
+             Description="Metadata test"
              Creation_Date="2003-01-02"
              Provider_ID="example.com"
              Asset_ID="TSTM2003010204050001"
@@ -64,7 +64,7 @@
         <App_Data App="SVOD" Name="Bit_Rate" Value="3750"/>
         <App_Data App="SVOD" Name="Content_FileSize" Value="252706816"/>
         <App_Data App="SVOD" Name="Content_CheckSum" Value="2680090e51970e67b412af35201b9053"/>
-		<App_Data App="SVOD" Name="Encryption" Value="true"/>
+	<App_Data App="SVOD" Name="Encryption" Value="true"/>
       </Metadata>
       <Content Value="movie_file.mpg"/>
     </Asset>
@@ -72,10 +72,10 @@
       <Metadata>
         <AMS Provider="001"
              Product="PRD"
-             Asset_Name="Metadata test (preview)"
+             Asset_Name="Metadata test"
              Version_Major="1"
              Version_Minor="0"
-             Description="Metadata test (preview asset)"
+             Description="Metadata test"
              Creation_Date="2003-01-02"
              Provider_ID="example.com"
              Asset_ID="TSTR2003010204050001"
@@ -97,10 +97,10 @@
       <Metadata>
         <AMS Provider="001"
              Product="PRD"
-             Asset_Name="Metadata test (poster)"
+             Asset_Name="Metadata test"
              Version_Major="1"
              Version_Minor="0"
-             Description="Metadata test (poster asset)"
+             Description="Metadata test"
              Creation_Date="2003-01-02"
              Provider_ID="example.com"
              Asset_ID="TSTI2003010204050001"

@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
 import sys
+from distutils.core import setup
+import py2exe
 
 long_description = (
     "This project contains a library and tools for manipulating and "
@@ -7,7 +9,7 @@ long_description = (
     "specification"
 )
 
-# Install requires configparser for Python 2.x
+# Install requires config parser for Python 2.x
 if sys.version_info[0] < 3:
     install_requires = ['configparser']
     tests_require = ['mock']
@@ -18,8 +20,8 @@ else:
     name='vod_metadata',
     version='2016.5.1',
     license='MIT',
-    url='https://github.com/bbayles/vod_metadata',
-
+    #url='https://github.com/bbayles/vod_metadata',
+    url = 'https://bitbucket.org/quicksisver_dev_phase_1/metadata_gen/src',
     description='CableLabs VOD Metadata 1.1 library and tools',
     long_description="Library and tools for CableLabs VOD Metadata 1.1",
 
@@ -45,4 +47,3 @@ else:
     tests_require=tests_require,
 
     package_data={'vod_metadata': ["*.ini", "*.mp4", "*.pth", "*.xml"]},
-)

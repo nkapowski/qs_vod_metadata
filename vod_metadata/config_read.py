@@ -39,7 +39,7 @@ def parse_config(config_path):
         )
 
     # Provider_ID must be a lower-case domain name up to 20 characters
-    provider_id = config.get("VOD", "provider_id", fallback="example.com")
+    provider_id = config.get("SVOD", "provider_id", fallback="example.com")
     provider_id = provider_id.lower().strip()
 
     domain = provider_id.split(".")
@@ -54,8 +54,8 @@ def parse_config(config_path):
         )
 
     # Prefix must be 3 alphabetic characters
-    prefix = config.get("VOD", "prefix", fallback="MSO").upper().strip()
-    if (len(prefix) != 3) or (not prefix.isalpha()):
+    prefix = config.get("SVOD", "prefix", fallback="MSO").upper().strip()
+    if (len(prefix) > 4) or (len(prefix) <3 ) or (not prefix.isalpha()):
         raise ConfigurationError(
             "Configuration file error: prefix must be 3 alphabetic characters"
         )
@@ -63,7 +63,7 @@ def parse_config(config_path):
     # Category must be a /-delimeted hierarchy of folder names, each folder
     # name 20 characters or fewer
     title_category = (
-        config.get("VOD", "title_category", fallback="Testing/Videos").strip()
+        config.get("SVOD", "title_category", fallback="Testing/Videos").strip()
     )
     if any((len(folder) > 20 for folder in title_category.split("/"))):
         raise ConfigurationError(

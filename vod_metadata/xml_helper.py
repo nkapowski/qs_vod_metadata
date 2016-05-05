@@ -24,4 +24,5 @@ def tobytes(doctype, root_elem):
     indent(root_elem)
     elements = etree.tostring(root_elem, encoding="utf-8")
 
-    return b'\n'.join((declaration, doctype, elements))
+    #return b'\n'.join((declaration, doctype, elements))
+    return b'\n'.join((declaration, elements))
