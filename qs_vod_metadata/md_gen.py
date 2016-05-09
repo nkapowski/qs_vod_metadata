@@ -2,8 +2,8 @@ import datetime
 import os
 import random
 
-from vod_metadata import default_template_path
-from vod_metadata.vodpackage import VodPackage
+from qs_vod_metadata import default_template_path
+from qs_vod_metadata.vodpackage import VodPackage
 
 __all__ = ["generate_metadata"]
 
