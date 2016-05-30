@@ -122,7 +122,7 @@ def generate_metadata(
             "Year": timestamp.strftime("%Y"),
             "Category": [vod_config.title_category],
             "Genre": ["Other"],
-            "Show_Type": "Other",
+            "Show_Type": "Movie",
             "Billing_ID": title_billing_id,
             "Licensing_Window_Start": creation_date,
             "Licensing_Window_End": end_date,

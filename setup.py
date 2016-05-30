@@ -18,11 +18,9 @@ else:
     tests_require = []
 
     name='qs_vod_metadata',
-    version='2016.1.6',
+    version='0.1.0',
     license='MIT',
-    #url='https://github.com/bbayles/vod_metadata',
     url = 'https://github.com/nkapowski/qs_vod_metadata',
-	#download_url = 'https://bitbucket.org/quicksisver_dev_phase_1/metadata_gen/src',
     description='CableLabs VOD Metadata 1.1 library and tools',
     long_description="Library and tools for CableLabs VOD Metadata 1.1",
 
