@@ -230,9 +230,7 @@ The `qs_vod_metadata` module exposes these exceptions:
 * `ConfigurationError` - raised if the values specified in the configuration
  file, `vod_config.ini` are not valid.
 
-## Contact the author
-I wrote this tool to save myself time hand-editing VOD metadata files.
-I've tested importing the generated metadata into SeaChange Axiom and Arris CMM
-back office systems.
+## Contact the maintainer
+This tool castomizing original tool to save time hand-editing VOD metadata files. Original tool created by Bo Bayles.
 
-E-mail [Bo Bayles](bbayles+github@gmail.com) with questions and feature suggestions.
+E-mail maintainer [Natalie Kapovski](nkapowski+github@gmail.com) with questions and feature suggestions.
