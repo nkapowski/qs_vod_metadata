@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bbayles/vod_metadata.svg?branch=master)](https://travis-ci.org/bbayles/vod_metadata)
+[![Build Status](https://travis-ci.org/nkapowski/qs_vod_metadata?branch=master)
 [![Coverage Status](https://coveralls.io/repos/bbayles/vod_metadata/badge.svg?branch=master&service=github)](https://coveralls.io/github/bbayles/vod_metadata?branch=master)
 
 ## Introduction
@@ -70,7 +70,7 @@ Specify a different metadata template (useful for adding custom values) with the
 C:\Videos>C:\Python34\python.exe -m qs_vod_metadata  --template-path "C:\Somewhere\template.xml"
 ```
 
-Change what values are used when generating metadata files by specifying the path to a config file ([example](https://github.com/bbayles/vod_metadata/blob/master/vod_metadata/vod_config.ini)):
+Change what values are used when generating metadata files by specifying the path to a config file ([example](https://github.com/nkapowski/qs_vod_metadata/blob/master/qs_vod_metadata/vod_config.ini)):
 ```
 C:\Videos>C:\Python34\python.exe -m qs_vod_metadata  --config-path "C:\Somewhere\config.ini"
 ```
