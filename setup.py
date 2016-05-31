@@ -1,7 +1,5 @@
 from setuptools import setup, find_packages
 import sys
-from distutils.core import setup
-import py2exe
 
 long_description = (
     "This project contains a library and tools for manipulating and "
@@ -17,6 +15,7 @@ else:
     install_requires = []
     tests_require = []
 
+setup(
     name='qs_vod_metadata',
     version='0.1.0',
     license='MIT',
@@ -46,3 +45,4 @@ else:
     tests_require=tests_require,
 
     package_data={'qs_vod_metadata': ["*.ini", "*.mp4", "*.pth", "*.xml"]},
+)

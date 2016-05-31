@@ -14,8 +14,8 @@ You will need:
   * Windows users: Download and install Python from [python.org](http://python.org)
 * MediaInfo (preferably version 0.7.52+)
   * Windows users: Download the [MediaInfo](http://mediaarea.net/en/MediaInfo) __CLI__ package and extract it somewhere (e.g. to `C:\Program Files\MediaInfo`)
-* The `vod_metadata` module from [PyPI](https://pypi.python.org/pypi/vod_metadata)
-  * Windows users: Open a command prompt. Then run this command: `C:\Python34\python.exe -m pip install vod_metadata`
+* The `qs_vod_metadata` module from [PyPI](https://pypi.python.org/pypi/qs_vod_metadata)
+  * Windows users: Open a command prompt. Then run this command: `C:\Python34\python.exe -m pip install qs_vod_metadata`
 
 ## Using the metadata generator
 
@@ -34,7 +34,7 @@ C:\Videos>dir /b
 Execute the script with the Python interpreter, using the `-m` switch:
 
 ```
-C:\Python34\python.exe -m vod_metadata
+C:\Python34\python.exe -m qs_vod_metadata
 ```
 
 After it runs (it can take a bit for the checksums to be calculated) you should
@@ -62,17 +62,17 @@ and the poster / box cover can have either a .bmp or .jpg or .jpeg extension.
 
 Process videos in a particular directory with the `--video-dir` argument.
 ```
-C:\Videos>C:\Python34\python.exe -m vod_metadata  --video-dir "C:\Somewhere\Videos"
+C:\Videos>C:\Python34\python.exe -m qs_vod_metadata  --video-dir "C:\Somewhere\Videos"
 ```
 
 Specify a different metadata template (useful for adding custom values) with the `--template-path` argument.
 ```
-C:\Videos>C:\Python34\python.exe -m vod_metadata  --template-path "C:\Somewhere\template.xml"
+C:\Videos>C:\Python34\python.exe -m qs_vod_metadata  --template-path "C:\Somewhere\template.xml"
 ```
 
 Change what values are used when generating metadata files by specifying the path to a config file ([example](https://github.com/bbayles/vod_metadata/blob/master/vod_metadata/vod_config.ini)):
 ```
-C:\Videos>C:\Python34\python.exe -m vod_metadata  --config-path "C:\Somewhere\config.ini"
+C:\Videos>C:\Python34\python.exe -m qs_vod_metadata  --config-path "C:\Somewhere\config.ini"
 ```
 
 
@@ -80,7 +80,7 @@ C:\Videos>C:\Python34\python.exe -m vod_metadata  --config-path "C:\Somewhere\co
 If you find that you get a `RuntimeError: MediaInfo not found.` error message, you can specify the path to MediaInfo on the command line:
 
 ```
-C:\Videos>C:\Python34\python.exe -m vod_metadata  --mediainfo-path "C:\Somewhere\MediaInfo.exe"
+C:\Videos>C:\Python34\python.exe -m qs_vod_metadata  --mediainfo-path "C:\Somewhere\MediaInfo.exe"
 ```
 
 Be sure that you've got the command line version of MediaInfo and not the GUI version.
@@ -91,7 +91,7 @@ You can use the module to edit already-existing metadata files.
 First, import the module:
 
 ```python
->>> from vod_metadata import VodPackage
+>>> from qs_vod_metadata import VodPackage
 ```
 
 Next, read in an existing metadata file:
@@ -161,10 +161,10 @@ need to keep in mind:
 * Metadata updates may not alter the asset elements in the package
  (i.e. the `preview`, `poster`, or `box cover` asset elements cannot be removed).
 
-The `VodPackage` class is defined in the `vod_metadata.VodPackage` sub-module.
+The `VodPackage` class is defined in the `qs_vod_metadata.VodPackage` sub-module.
  Import it with:
 
- `from vod_metadata import VodPackage`.
+ `from qs_vod_metadata import VodPackage`.
 
 Parse an existing metadata file by instantiating a VodPackage class:
 
@@ -219,7 +219,7 @@ The `VodPackage` class exposes these methods:
 * `VodPackage.make_delete()` - sets the `Verb` value to `DELETE` amd marks
  the package as a metadata update.
 
-The `vod_metadata` module exposes these exceptions:
+The `qs_vod_metadata` module exposes these exceptions:
 * `MissingElement` - raised if you try to write an asset package without a `movie`
  element, if you use MediaInfo to scan an element that is missing, or if you
  try to remove an element that is not present.
