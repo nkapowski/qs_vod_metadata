@@ -2,11 +2,11 @@ from __future__ import division
 from io import open
 import os.path
 
-from vod_metadata import default_config_path
-from vod_metadata.config_read import parse_config
-from vod_metadata.md5_calc import md5_checksum
-from vod_metadata.media_info import check_video, check_picture
-from vod_metadata.xml_helper import etree, tobytes
+from qs_vod_metadata import default_config_path
+from qs_vod_metadata.config_read import parse_config
+from qs_vod_metadata.md5_calc import md5_checksum
+from qs_vod_metadata.media_info import check_video, check_picture
+from qs_vod_metadata.xml_helper import etree, tobytes
 
 __all__ = ["MissingElement", "InvalidMpeg", "VodPackage"]
 

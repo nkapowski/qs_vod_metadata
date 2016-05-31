@@ -8,9 +8,9 @@ from io import open
 from os import chdir, getcwd, listdir
 from os.path import abspath, splitext
 
-from vod_metadata import default_config_path, default_template_path
-from vod_metadata.config_read import parse_config
-from vod_metadata.md_gen import generate_metadata
+from qs_vod_metadata import default_config_path, default_template_path
+from qs_vod_metadata.config_read import parse_config
+from qs_vod_metadata.md_gen import generate_metadata
 
 
 # Accept arguments from the command line
