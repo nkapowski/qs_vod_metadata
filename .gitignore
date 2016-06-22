@@ -133,6 +133,7 @@ Desktop.ini
 #############
 
 *.py[co]
+.pypirc
 
 # Packages
 *.egg
