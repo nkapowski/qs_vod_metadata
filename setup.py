@@ -23,8 +23,8 @@ setup(
     description='CableLabs VOD Metadata 1.1 library and tools',
     long_description="Library and tools for CableLabs VOD Metadata 1.1",
 
-    author='Bo Bayles',
-    author_email='bbayles@gmail.com',
+    author='Natalie Kapovski',
+    author_email='natalie@gmail.com',
     maintainer='Natalie Kapovski',
     maintainer_email='natalie@latto.tv',
 

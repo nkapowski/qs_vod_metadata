@@ -1,4 +1,4 @@
-Copyright (c) 2014 Bo Bayles
+Copyright (c) 2016 Natalie Kapovski
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -10,6 +10,10 @@ the following conditions:
 
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
+
+Copyright for portions of project qs_vod_metadata are held by Bo Bayles,
+2014 as part of project vod_metadata. All other copyright for project 
+qs_vod_metadata are held by Natalie Kapovski, 2016.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
