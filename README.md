@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/bbayles/vod_metadata.svg?branch=master)](https://travis-ci.org/bbayles/vod_metadata)
+[![Build Status](https://travis-ci.org/nkapowski/qs_vod_metadata.svg?branch=master)](https://travis-ci.org/nkapowski/qs_vod_metadata)
 [![Coverage Status](https://coveralls.io/repos/bbayles/vod_metadata/badge.svg?branch=master&service=github)](https://coveralls.io/github/bbayles/vod_metadata?branch=master)
 
 ## Introduction
